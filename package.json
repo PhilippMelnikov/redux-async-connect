@@ -28,9 +28,10 @@
   },
   "homepage": "https://github.com/Rezonans/redux-async-connect",
   "peerDependencies": {
-    "react": "0.14.x",
+    "react": "15.5.x",
     "react-router": "2.x.x",
-    "react-redux": "4.x.x"
+    "react-redux": "4.x.x",
+    "prop-types": "^15.6.0"
   },
   "devDependencies": {
     "babel-cli": "^6.4.5",

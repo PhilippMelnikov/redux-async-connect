@@ -1,9 +1,8 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import RouterContext from 'react-router/lib/RouterContext';
 import { beginGlobalLoad, endGlobalLoad } from './asyncConnect';
 import { connect } from 'react-redux';
-
-const { array, func, object, any } = React.PropTypes;
 
 /**
  * We need to iterate over all components for specified routes.
@@ -51,16 +50,16 @@ let loadDataCounter = 0;
 
 class ReduxAsyncConnect extends React.Component {
   static propTypes = {
-    components: array.isRequired,
-    params: object.isRequired,
-    render: func.isRequired,
-    beginGlobalLoad: func.isRequired,
-    endGlobalLoad: func.isRequired,
-    helpers: any
+    components: PropTypes.arrayOf(PropTypes.any).isRequired,
+    params: PropTypes.shape({}).isRequired,
+    render: PropTypes.func.isRequired,
+    beginGlobalLoad: PropTypes.func.isRequired,
+    endGlobalLoad: PropTypes.func.isRequired,
+    helpers: PropTypes.any
   };
 
   static contextTypes = {
-    store: object.isRequired
+    store: PropTypes.shape({}).isRequired
   };
 
   static defaultProps = {
